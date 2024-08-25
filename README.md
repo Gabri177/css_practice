@@ -139,3 +139,137 @@ font-size:20pt;
 
 ### **多重样式优先级**
 
+&emsp;样式表允许以多种方式规定样式信息. 样式可以规定在单个HTML元素中, 在HTML页的头元素中, 或在一个外部CSS文件中. 甚至可以咋同一个HTML文档内部引用多个外部样式表.
+&emsp;一般情况下, 优先级如下: <br>
+&emsp; **(内联样式)Inline style > (内部样式) Internal style sheet > (外部样式) External style sheet > 浏览器默认样式** <br>
+
+&emsp;假设我们有一个css文件, 代码如下:
+```css
+h3 {
+	color:blue;
+}
+```
+&emsp;我们有一个html代码如下:
+```html
+<head>
+    <!-- 外部样式 style.css -->
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+    <!-- 设置：h3{color:blue;} -->
+    <style type="text/css">
+      /* 内部样式 */
+      h3{color:green;}
+    </style>
+</head>
+<body>
+    <h3>显示绿色，是内部样式</h3>
+</body>
+```
+> 这种情况下, h3 显示为绿色, 用的内部样式的设置
+
+**注意:** 如果外部样式放在内部样式的后面, 则外部样式将覆盖内部样式, 具体例子如下: 
+```html
+<head>
+    <!-- 设置：h3{color:blue;} -->
+    <style type="text/css">
+      /* 内部样式 */
+      h3{color:green;}
+    </style>
+    <!-- 外部样式 style.css -->
+    <link rel="stylesheet" type="text/css" href="style.css"/>
+</head>
+<body>
+    <h3>显示蓝色，是外部样式</h3>
+</body>
+```
+## CSS背景
+
+CSS 背景属性用于定义 HTML 元素的背景.
+
+CSS 属性定义背景效果:
+
+* background-color
+* background-image
+* background-repeat
+* background-repeat
+* background-attachment
+* background-position
+
+### 背景颜色
+
+&emsp;background-color 属性定义了元素的背景颜色.
+&emsp;页面背景颜色使用在body的选择器中.
+
+例子如下:
+```css
+body {background-color:#b0c4de;}
+```
+> CSS中, 颜色值通常以一下方式定义:<br>
+	&emsp;* 十六进制 -> 例如 `#ff0000`<br>
+	&emsp;* RGB -> 例如 `rgb(255,0,0)`<br>
+	&emsp;* 颜色名称 -> 例如 `red`
+
+### 背景图像
+
+&emsp;background-image 属性描述了元素的背景图像.
+
+&emsp;默认情况下, 背景图像进行平铺重复显示, 以覆盖整个元素实体 例子如下:
+```css
+body {background-image:url('paper.gif');}
+```
+
+### 背景图像 - 水平或垂直平铺
+
+&emsp;默认情况下 backgropund-image 属性会在页面的水平或者垂直方向平铺.
+
+&emsp;一些图像如果在水平方向与垂直方向平铺, 这样看起来很不协调.
+
+&emsp;因此, 应该设置相应的平铺模式, 使得页面展示起来更加协调, 代码如下:
+
+```css
+body
+{
+	background-image:url('gradient2.png');
+	background-repeat:repeat-x;
+}
+```
+### 背景图像 - 设置定位与平铺
+
+> &emsp;要让背景图像不影响文本的排版
+	<br> 如果不想让图像平铺, 我们可以使用 background-repeat属性
+```css
+body
+{
+	background-image:url('img_tree.png');
+	background-repeat:no-repeat;
+}
+```
+
+&emsp;上面的例子中, 背景图像与文本显示在同一个位置, 为了让页面排版更加的合理, 不影响文本的阅读, 我们可以改变图像的位置.
+
+&emsp;我们可以利用`background-position` 属性改变图像在背景中的位置 例子如下:
+```css
+body
+{
+	background-image:url('img_tree.png');
+	background-repeat:no-repeat;
+	background-position:right top;
+}
+```
+### 背景 - 简写属性
+
+&emsp;在上面的例子中, 我们可以看到页面的背景颜色通过很多的属性进行控制. 为了简化这些属性的代码, 我们可以将这些属性合并在同一个属性中. 背景颜色的简写属性为 `background` :
+
+```css
+body {
+	background:#ffff00 url('img_tree.png') no-repeat right top;
+}
+```
+**注意:** 当使用简写属性时, 属性值的顺序为:
+
+* background-color
+* background-image
+* background-repeat
+* background-attachment
+* background-position
+
+当使用 `background-attachment:fixed` 属性时, 图像不会随着页面的其他部分滚动.
