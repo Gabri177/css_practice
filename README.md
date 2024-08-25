@@ -273,3 +273,78 @@ body {
 * background-position
 
 当使用 `background-attachment:fixed` 属性时, 图像不会随着页面的其他部分滚动.
+
+## CSS Text(文本)
+### 文本颜色
+&emsp;颜色属性被用来设置文字的颜色.
+&emsp;颜色是通过CSS最经常的指定:
+
+* 十六进制值 -> #FF0000
+* 一个RGB值 -> RGB(255,0,0)
+* 颜色的名称 -> red
+
+&emsp;一个网页的背景颜色是指在主体内的选择:
+```css
+body {color:red;}
+h1 {color:#00ff00;}
+h2 {color:rgb(255,0,0);}
+```
+> 对于W3C标准的CSS：如果你定义了颜色属性，你还必须定义背景色属性。<br>
+	**`color`这个属性用来设置文本的颜色**
+
+### 文本的对齐方式
+
+&emsp;文本排列属性是用来设置文本的水平对齐方式
+&emsp;文本可居中或对齐到左或右, 两端对齐.
+&emsp;当`text-align`设置为`justify`, 每一行被展开的宽度相等, 左, 右外边距是对齐的.
+```css
+h1 {text-align:center;}
+p.date {text-align:right;}
+p.main {text-align:justify;}
+```
+### 文本修饰
+&emsp;`text-decoration` 属性用来设置或删除文本的装饰.
+&emsp; 从设计的角度看 `text-decoration`属性主要是用来删除链接的下划线:
+```css
+a {text-decoration:none;}
+```
+当然, 也可以以如下方式装饰文字:
+```css
+h1 {text-decoration:overline;}
+h2 {text-decoration:line-through;}
+h3 {text-decoration:underline;}
+```
+> 注意: 不建议强调不是链接的文本, 因为这回混淆用户
+
+### 文本转换
+
+&emsp;文本转换属性是用来指在一个文本中的大写和小写字母.
+&emsp;可用于所有字句变成大写或小写字母, 或每个单词的首字母大写. 例子如下:
+```css
+p.uppercase {text-transform:uppercase;}
+p.lowercase {text-transform:lowercase;}
+p.capitalize {text-transform:capitalize;}
+```
+### 文本缩进
+&emsp;文本缩进属性是用来指文本的第一行的缩进.
+```css
+p {text-indent:50px;}
+```
+### 其他属性
+**指定字符之间的空间 -> `letter-spacing:3px;` 或 `letter-spacing:-3px;`**
+
+**指定行与行之间的空间 -> `ling-height:70%;`**
+
+**设置元素的文本方向 -> `direction:rtl;(从右到左书写方向)`**
+
+**增加单词之间的空间 -> `word-spacing:30px;`**
+
+**在元素内禁用文字不换行(即取消自动换行) -> `white-space:nowrap;`**
+
+**垂直对齐图像 -> `vertical-align:text-top;` 或 `vertical-align:text-bottom`**
+
+**添加文本阴影 -> `text-shadow:2px 3px #FF0000;`**
+
+## CSS 字体
+
+
