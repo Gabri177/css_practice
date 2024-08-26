@@ -516,3 +516,148 @@ p.ex2 {
 	font:italic bold 12px/30px Georgia,serif;
 }
 ```
+
+## CSS 链接
+
+&emsp;不同的连接可以有不同的样式.
+### 链接的样式
+&emsp;链接的样式, 可以用任何CSS属性 (如颜色, 字体, 背景等)
+
+&emsp;特别的链接, 可以有不同的样式, 这取决于他们是什么状态.
+
+&emsp;共有四个链接的状态, 分别为:
+
+* a:link - 正常, 未访问过的链接
+* a:visited - 用于已访问过的链接
+* a:hover - 当用户鼠标放在链接上时
+* a:active - 链接被点击的那一刻
+
+```css
+a:link {color:#000000;}      /* 未访问链接*/
+a:visited {color:#00FF00;}  /* 已访问链接 */
+a:hover {color:#FF00FF;}  /* 鼠标移动到链接上 */
+a:active {color:#0000FF;}  /* 鼠标点击时 */
+```
+> 注意： a:hover 必须在 a:link 和 a:visited 之后，需要严格按顺序才能看到效果。<br>
+	注意： a:active 必须在 a:hover 之后。
+
+### 常见的链接样式
+
+&emsp;**文本修饰** -> `text-decoration` 属性, 主要是用来去除下划线, 或者添加下划线
+```css
+a:link {text-decoration:none;}
+a:visited {text-decoration:none;}
+a:hover {text-decoration:underline;}
+a:active {text-decoration:underline;}
+```
+&emsp;**背景颜色** -> `background-color` 属性, 修改背景颜色
+```css
+a:link {background-color:#B2FF99;}
+a:visited {background-color:#FFFF85;}
+a:hover {background-color:#FF704D;}
+a:active {background-color:#FF704D;}
+```
+
+&emsp;添加不同样式的超链接的css例子:
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+		<title>例子</title> 
+		<style>
+			a.one:link {
+				color:#ff0000;
+			}
+			a.one:visited {
+				color:#0000ff;
+			}
+			a.one:hover {
+				color:#ffcc00;
+			}
+
+			a.two:link {
+				color:#ff0000;
+			}
+			a.two:visited {
+				color:#0000ff;
+			}
+			a.two:hover {
+				font-size:150%;
+			}
+
+			a.three:link {
+				color:#ff0000;
+			}
+			a.three:visited {
+				color:#0000ff;
+			}
+			a.three:hover {
+				b
+				ackground:#66ff66;
+			}
+			a.four:link {
+				color:#ff0000;
+			}
+			a.four:visited {
+				color:#0000ff;
+			}
+			a.four:hover {
+				font-family:Georgia, serif;
+			}
+
+			a.five:link {
+				color:#ff0000;text-decoration:none;
+			}
+			a.five:visited {
+				color:#0000ff;text-decoration:none;
+			}
+			a.five:hover {
+				text-decoration:underline;
+			}
+		</style>
+	</head>
+
+	<body>
+		<p>将鼠标移至链接上改变样式.</p>
+
+		<p><b><a class="one" href="/css/" target="_blank">这个链接改变颜色</a></b></p>
+		<p><b><a class="two" href="/css/" target="_blank">这个链接改变字体大小</a></b></p>
+		<p><b><a class="three" href="/css/" target="_blank">这个链接改变背景颜色</a></b></p>
+		<p><b><a class="four" href="/css/" target="_blank">这个链接改变字体类型</a></b></p>
+		<p><b><a class="five" href="/css/" target="_blank">这个链接改变文字修饰</a></b></p>
+	</body>
+
+</html>
+```
+&emsp;**创建链接框** :
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+		<title>例子</title> 
+		<style>
+			a:link, a:visited {
+
+				display:block;
+				font-weight:bold;
+				color:#FFFFFF;
+				background-color:#98bf21;
+				width:120px;
+				text-align:center;
+				padding:4px;
+				text-decoration:none;
+			}
+			a:hover, a:active {
+
+				background-color:#7A991A;
+			}
+		</style>
+	</head>
+
+	<body>
+		<a href="/css/" target="_blank">这是一个链接</a>
+	</body>
+</html>
+```
