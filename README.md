@@ -701,7 +701,6 @@ ul{
 
 &emsp;**浏览器兼容性解决方案** :
 ```css
-/*css 中的选择器是以交集的方式运作的*/
 ul {
     list-style-type: none;
     padding: 0px;
@@ -717,6 +716,7 @@ ul li {
 ### 列表 - 简写属性
 
 &emsp;在单个属性中可以指定所有的列表属性. 这就是所谓的简写属性.
+
 &emsp;为列表使用简写属性, 列表样式属性设置的例子如下: 
 ```css
 ul {
@@ -736,3 +736,75 @@ ul {
 }
 ```
 
+## CSS 表格
+
+&emsp;使用CSS可以使HTML表格更加美观
+### 表格边框
+&emsp;指定CSS表格边框, 使用`border`属性
+
+&emsp;下面的例子指定了一个表格的 th 和 td 元素
+```css
+table, th, td {
+    border: 1px solid black;
+}
+```
+
+### 折叠边框
+&emsp;`border-collapse`属性设置表格的边框是否被折叠成一个单一额边框或隔开
+```css
+table {
+    border-collapse:collapse;
+}
+table,th, td {
+    border: 1px solid black;
+}
+```
+### 表格的宽度和高度
+
+&emsp;`width` 和 `height` 属性定义表格的宽度和高度
+```css
+table,td,th {
+	border:1px solid black;
+}
+table {
+	width:100%;
+}
+th {
+	height:100px;
+}
+```
+### 表格中的文字对齐
+&emsp;表格中的文本对齐和垂直对齐属性
+
+&emsp;`text-align` 属性设置水平对齐方式, 向左, 向右, 或者中心对齐
+```css
+td {
+    text-align:right;
+}
+```
+&emsp;垂直对齐属性设置垂直对齐, 比如顶部, 底部或者中间对齐
+```css
+td {
+    height:50px;
+    vertical-align:bottom;
+}
+```
+### 表格填充
+
+&emsp;如果需要控制边框和表格之间的间距, 应该使用td和th元素的填充属性 
+```css
+td {
+    padding:15px;
+}
+```
+### 表格颜色
+
+&emsp;下面的例子指定边框的颜色,和th元素的文本和背景颜色:
+```css
+table, td, th {
+    border:1px solid green;
+}
+th {
+    background-color:green;
+    color:white;
+}
