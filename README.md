@@ -347,4 +347,172 @@ p {text-indent:50px;}
 
 ## CSS 字体
 
+&emsp;CSS 字体属性定义字体, 加粗, 大小, 文字样式.
 
+&emsp;CSS 字体属性定义字体, 加粗, 大小, 文字样式.
+
+### serif 和 sans-serif 字体之间的区别
+
+![alt text](./readme_sets/image.png)
+&emsp;在计算机上, `sans-serif`字体被认为是比serif字体更容易阅读.
+
+### CSS 字型
+
+&emsp;在CSS中, 有两种类型的字体系列名称:
+
+* **通用字体系列** - 拥有相似外观的字体系统组合 (例如 `serif` 或者 `monospace`)
+* **特定字体系列** - 一个特定的字体系列 (如 `Times` 或 `Courer`)
+
+### 字体系列
+
+&emsp;`font-family` 属性设置文本的字体系列.
+&emsp;`font-family` 属性应该设置几个字体名称作为一种"后备"机制, 如果浏览器不支持第一种字体, 他讲尝试下一种字体
+> 注意; 如果字体系列的名称超过一个字, 他必须用引号, 如 `Font-family:"宋体"`.
+
+&emsp;多个字体系列是用一个逗号分割指明:
+```css
+p {
+	font-family:"Times New Roman", Tiems, serif;
+}
+```
+### 字体样式
+
+&emsp;主要是用于指特定斜体文字的字体样式属性
+
+&emsp;这个属性有三个值:
+
+* 正常 - 正常显示文本
+* 斜体 - 以斜体字显示的文字
+* 倾斜的文字 - 文字向一边倾斜 (和斜体非常类似, 但不太支持)
+```css
+p.normal {
+	font-style:normal;
+}
+p.italic {
+	font-style:italic;
+}
+p.oblique {
+	font-style:oblique;
+}
+```
+### 字体大小
+
+&emsp;`font-size` 属性设置文本的大小.
+
+&emsp;能否管理文字的大小, 在网页设计中是非常重要的. 但是, 我们不能通过调整字体大小使段落看上去像标题, 或者使标题看上去像段落.
+
+&emsp;所以使用正确的HTML标签是必要的: &lt;h1&gt; - &lt;h6&gt; 表示标题, &lt;p&gt; 表示段落
+
+&emsp;绝对大小:
+
+* 设置一个指定大小的文本
+* 不允许用户在所有浏览器中改变文本大小
+* 确定了输出的物理尺寸时绝对大小很有用
+
+&emsp;相对大小:
+
+* 相对于周围元素来设置大小
+* 允许用户在浏览器中改变文字大小
+> 如果我们不指定一个字体的大小, 默认大小和普通文本段落一样, 是16像素 `16px=1em`
+
+### 设置字体大小像素
+
+&emsp;设置文字大小与像素, 代码例子如下:
+```css
+h1 {
+	font-size:40px;
+}
+h2 {
+	font-size:30px;
+}
+h3 {
+	font-size:14px;
+}
+```
+### 用em来设置字体大小
+
+&emsp;为了避免Internet Exploter 中无法调整文本的问题, 许多开发者使用 `em` 单位代替像素.
+
+&emsp;em的尺寸单位由**W3C**建议.
+
+&emsp;1em 和当前字体大小相等. 在浏览器中默认的文字大小是 **16px**
+
+&emsp;因此, 1em的默认大小是16px. 可以通过下面这个公式将像素转换为em:`px/16 = em`
+
+```css
+h1 {
+	font-size:2.5em;
+	/*40px*/
+}
+h2 {
+	font-size:1.875em;
+	/*30px*/
+}
+p {
+	font-size:0.875em;
+	/*14px*/
+}
+```
+&emsp;在上面的例子中, em的文字大小和前面例子中的像素一样. 不过这里我们使用的是em单位, 这样即可在所有浏览器中调整文本大小.
+> 不幸的是, 仍然是IE浏览器的问题. 调整文本的大小时, 护臂正常的尺寸更大或者更小.
+
+### 使用百分比和EM组合
+&emsp;在所有浏览器的解决方案中, 设置&lt;body&gt;元素的默认字体大小是百分比:
+```css
+body {
+	font-size:100%;
+}
+h1 {
+	font-size:2.5em;
+}
+h2 {
+	font-size:1.875em;
+}
+p {
+	font-size:0.875em;
+}
+```
+> 上面的代码使得在所有浏览器中, 可以显示相同的文本大小, 并允许所有浏览器缩放文本的大小.
+### 设置字体加粗
+
+&emsp;一共有四种字体的粗细程度:
+```css
+p.normal {
+	font-weight:normal;
+}
+p.light {
+	font-weight:light;
+}
+p.thick {
+	font-weight:thick;
+}
+p.thicker {
+	font-weight:900;
+}
+```
+
+### 设置字体的转变
+
+&emsp;例如:
+```css
+p.normal {
+	font-variant:normal;
+}
+p.small {
+	font-variant:small-caps;
+}
+```
+![alt text](./readme_sets/image2.png)
+> 上面样式设置的结果如上图
+
+
+### 使用简写属性设置字体
+```css
+p.ex1 {
+	font:15px arial,sans-serif;
+}
+
+p.ex2 {	
+	font:italic bold 12px/30px Georgia,serif;
+}
+```
