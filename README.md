@@ -661,3 +661,78 @@ a:active {background-color:#FF704D;}
 	</body>
 </html>
 ```
+
+## CSS 列表
+
+&emsp;CSS列表属性所用如下:
+
+* 设置不同的列表项, 标记为有序列表
+* 设置不同的列表项, 标记为无序列表
+* 设置列表项标记为图像
+
+### 列表
+
+&emsp;在HTML中, 有两种类型的列表
+
+* 无序列表`ul` - 列表项标记用特殊图形
+* 有序列表`ol` - 列表项的标记有数字或字母
+
+&emsp;使用CSS, 可以列出进一步的样式, 并可用图像作为列表项标记
+
+### 不同的列表项标记
+
+&emsp;我们可以用`list-style-type`属性是定列表项标记的类型:
+```css
+ul.a {list-style-type: circle;}
+ul.b {list-style-type: square;}
+ 
+ol.c {list-style-type: upper-roman;}
+ol.d {list-style-type: lower-alpha;}
+```
+
+### 作为列表项标记的图像
+
+&emsp;要指定列表项标记的图像, 使用列表样式的图像属性:
+```css
+ul{
+    list-style-image: url('sqpurple.gif');
+}
+```
+
+&emsp;**浏览器兼容性解决方案** :
+```css
+/*css 中的选择器是以交集的方式运作的*/
+ul {
+    list-style-type: none;
+    padding: 0px;
+    margin: 0px;
+}
+ul li {
+    background-image: url(sqpurple.gif);
+    background-repeat: no-repeat;
+    background-position: 0px 5px; 
+    padding-left: 14px; 
+}
+```
+### 列表 - 简写属性
+
+&emsp;在单个属性中可以指定所有的列表属性. 这就是所谓的简写属性.
+&emsp;为列表使用简写属性, 列表样式属性设置的例子如下: 
+```css
+ul {
+    list-style: square url("sqpurple.gif");
+}
+```
+> 可以按顺序设置 `list-style-type`, `list-style-position`, `list-style-image`
+
+### 移除默认设置
+
+&emsp;`list-style-type:none` 属性可以用于移除小标记. 默认情况下列表 &lt;ul&gt; 或 &lt;ol&gt; 还设置了内边距和外边距, 可以使用`padding:0` 和 `margin:0` 来移除
+```css
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+```
+
