@@ -810,3 +810,12 @@ th {
 }
 ```
 ## CSS 盒子模型 (Box Model)
+
+&emsp;所有HTML元素可以看作盒子，在CSS中，"box model"这一术语是用来设计和布局时使用。
+
+&emsp;CSS盒模型本质上是一个盒子，封装周围的HTML元素，它包括：边距，边框，填充，和实际内容。
+
+&emsp;盒模型允许我们在其它元素和周围元素边框之间的空间放置元素。
+
+&emsp;下面的图片说明了盒子模型(Box Model)：
+![alt text](./readme_sets/image3.png)
