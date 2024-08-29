@@ -1071,7 +1071,80 @@ p {
 
 ![box-outline](./readme_sets/box_outline.gif)
 
+<!--有一个问题是 : outline 会不会超过margin, margin不是盒子的最外层吗. 如果能超过, 为什么, 那么盒子的最外层在哪里-->
 
+### 所有 CSS 轮廓 (outline) 属性
+
+&emsp;"CSS"列中的数字表示哪个CSS版本定义了该属性 (CSS1 或 CSS2)
+
+<table>
+	<tr style="background-color:rgb(30,30,30); color:rgb(120,200,150);border-style:solid;  border:1px; border-color:white;">
+		<td>属性</td>
+		<td>说明</td>
+		<td>值</td>
+		<td>CSS版本</td>
+	</tr>
+	<tr style="border:1px; border-color:white;">
+		<td>outline</td>
+		<td>在一个声明中设置轮廓属性</td>
+		<td>
+			<ul>
+				<li>outline-color</li>
+				<li>outline-style</li>
+				<li>outline-width</li>
+				<li>inherit</li>
+			</ul>
+		</td>
+		<td>2</td>
+	</tr>
+	<tr style="border:1px; border-color:white;">
+		<td>outline-color</td>
+		<td>设置轮廓的颜色</td>
+		<td>
+			<ul>
+				<li>color-name</li>
+				<li>hex-number</li>
+				<li>rgb-number</li>
+				<li>invert</li>
+				<li>inherit</li>
+			</ul>
+		</td>
+		<td>2</td>
+	</tr>
+	<tr style="border:1px; border-color:white;">
+		<td>outline-style</td>
+		<td>设置轮廓的样式</td>
+		<td>
+			<ul>
+				<li>none</li>
+				<li>dotted</li>
+				<li>dashed</li>
+				<li>solid</li>
+				<li>double</li>
+				<li>groove</li>
+				<li>ridge</li>
+				<li>inset</li>
+				<li>outset</li>
+				<li>inherit</li>
+			</ul>
+		</td>
+		<td>2</td>
+	</tr>
+	<tr style="border:1px; border-color:white;">
+		<td>outline-width</td>
+		<td>设置轮廓的宽度</td>
+		<td>
+			<ul>
+				<li>thin</li>
+				<li>medium</li>
+				<li>thick</li>
+				<li>length</li>
+				<li>inherit</li>
+			</ul>
+		</td>
+		<td>2</td>
+	</tr>
+</table>
 
 
 
