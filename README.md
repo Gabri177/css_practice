@@ -866,6 +866,215 @@ div {
 
 &emsp;IE 8及更早版本不兼容问题可以在 HTML页面声明 `<!DOCKTYPE html>`解决.
 
+## CSS 边框
+### CSS 边框属性
+
+CSS边框属性允许我们指定一个元素边框的样式和颜色
+几个例子:
+
+* 在四个边都有边框
+* 红色底部边框
+* 圆角边框
+* 左侧边框带宽度, 颜色为蓝色
+
+### 边框样式
+
+边框样式属性指定要显示什么样的边界.
+
+> `border-style`属性用来定义边框的样式
+
+**border-style** 的值:
+
+* `dotted` 定义一个点线边框
+* `dashed` 定义一个虚线边框
+* `solid` 定义一个实线边框
+* `double` 定义两个边框. 两个边框的宽度和 border-width 的值相同
+* `groove` 定义3D沟槽边框. 效果取决于边框的颜色值
+* `ridge` 定义3D脊边框. 效果取决于边框的颜色值
+* `inset` 定义一个3D的嵌入边框. 效果取决于边框的颜色值
+* `outset` 定义一个3D突出边框. 效果取决于边框的颜色值
+
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8"> 
+		<title>边框例子</title> 
+		<style>
+			p.none {border-style:none;}
+			p.dotted {border-style:dotted;}
+			p.dashed {border-style:dashed;}
+			p.solid {border-style:solid;}
+			p.double {border-style:double;}
+			p.groove {border-style:groove;}
+			p.ridge {border-style:ridge;}
+			p.inset {border-style:inset;}
+			p.outset {border-style:outset;}
+			p.hidden {border-style:hidden;}
+			p.mix {border-style: dotted dashed solid double;}
+		</style>
+	</head>
+
+	<body>
+		<p class="none">无边框。</p>
+		<p class="dotted">虚线边框。</p>
+		<p class="dashed">虚线边框。</p>
+		<p class="solid">实线边框。</p>
+		<p class="double">双边框。</p>
+		<p class="groove"> 凹槽边框。</p>
+		<p class="ridge">垄状边框。</p>
+		<p class="inset">嵌入边框。</p>
+		<p class="outset">外凸边框。</p>
+		<p class="hidden">隐藏边框。</p>
+		<p class="mix">混合边框</p>
+	</body>
+
+</html>
+```
+### 边框宽度
+
+&emsp;我们可以通过 `border_width`属性为边框指定宽度.
+
+&emsp;为边框指定宽度有两种方法: 可以指定长度值, 比如 2px 或 0.1em(单位为 px, pt, cm, em 等), 或者使用3个关键字之一, 他们分别是 thick, medium(默认值) 和 thin.
+
+&emsp;**注意:** CSS没有定义 3 个关键字的具体宽度, 所以一个用户可能把 thick, medium 和 thin 分别设置为等于 5px, 3px 和 2px, 而另一个用户则分别设置为 3px, 2px 和 1px
+
+```css
+p.one {
+	border-style:solid;
+	border-width:5px;
+}
+p.two {
+	border-style:solid;
+	border-width:medium;
+}
+```
+> **注意:** `border-width`属性 如果单独使用则不起作用. 要先使用`border-style`属性来这是边框
+
+### 边框颜色
+&emsp;`border-color`属性用于设置边框的颜色. 可以通过一下几种方式设置颜色:
+
+* name - 指定颜色的名称, 如 "red"
+* RGB - 指定RGB值, 如 "rgb(255,0,0)"
+* Hex - 指定16进制的值, 如 "#ff0000"
+
+### 边框 - 单独设置各边
+&emsp;在CSS中, 可以指定不同的侧面不同的边框:
+
+```css
+p {
+	border-top-style:dotted;
+	border-right-style:solid;
+	border-bottom-style:dotted;
+	border-left-style:solid;
+}
+```
+&emsp;也可以一次性设置这些所有的属性, 通过`border-style`:
+
+```css
+p {
+	border-style: dotted solid;
+}
+```
+&emsp;`border-style`属性可以有 1 - 4 个值:
+
+<ul style="background-color:rgb(200,250,200); color:black">
+	<li>
+		border-style:dotted solid double dashed;
+		<ul>
+			<li>上边框是dotted</li>
+			<li>右边框是solid</li>
+			<li>底边框是double</li>
+			<li>左边框是dashed</li>
+		</ul>
+	</li>
+	<li>
+		border-style:dotted solid double;
+		<ul>
+			<li>上边框是 dotted</li>
+			<li>左, 右边框是 solid</li>
+			<li>底边框是 double</li>
+		</ul>
+	</li>
+	<li>
+		border-style:dotted solid;
+		<ul>
+			<li>上, 底边框是 dotted</li>
+			<li>左, 右边框是solid</li>
+		</ul>
+	</li>
+	<li>
+		boder-style:dotted solid;
+		<ul>
+			<li>四面边框是 dotted</li>
+		</ul>
+	</li>
+</ul>
+
+> 上面的例子用了`border-style`. 然而, 它也可以和`border-width`, `border-color`一起使用
+
+### 边框-简写属性
+&emsp;上面的例子用了很多属性来设置边框.
+
+&emsp;我们也可以在一个属性中设置边框.
+
+&emsp;我们可以在`border`属性中设置:
+
+* border-width
+* border-style(required)
+* border-color
+
+```css
+p {
+	border:5px solid red;
+}
+```
+## CSS 轮廓 (outline)
+
+### 轮廓 (outline) 实例
+ 
+ &emsp;在元素周围画线:
+ ```css
+ p {
+	border: 1px solid red;
+	outline:green dotted thick;
+ }
+ ```
+ &emsp;设置轮廓的样式:
+ ```css
+ outline-style:dotted; /*点线轮廓*/
+ outline-style:dashed; /*虚线轮廓*/
+ outline-style:solid;  /*实线轮廓*/
+ outline-style:double; /*双线轮廓*/
+ outline-style:groove; /*凹槽轮廓*/
+ outline-style:ridge;  /*垄状轮廓*/
+ outline-style:inset;  /*嵌入轮廓*/
+ outline-style:outset; /*外凸轮廓*/
+ ```
+
+&emsp;设置轮廓的颜色:
+```css
+p {
+	outline-color: #00ff00;
+}
+```
+&emsp; 设置轮廓的宽度;
+```css
+p {
+	outline-width:3px;
+}
+```
+### CSS 轮廓 (outline)
+&emsp; 轮廓 (outline) 是绘制于元素周围的一条线, 位与边框边缘的外围, 可起到突出元素的作用.
+
+&emsp;CSS outline 属性规定元素轮廓的样式, 颜色和宽度.
+
+![box-outline](./readme_sets/box_outline.gif)
+
+
+
+
+
 
 
 
