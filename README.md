@@ -1065,6 +1065,7 @@ p {
 }
 ```
 ### CSS 轮廓 (outline)
+
 &emsp; 轮廓 (outline) 是绘制于元素周围的一条线, 位与边框边缘的外围, 可起到突出元素的作用.
 
 &emsp;CSS outline 属性规定元素轮廓的样式, 颜色和宽度.
@@ -1105,7 +1106,7 @@ p {
 				<li>color-name</li>
 				<li>hex-number</li>
 				<li>rgb-number</li>
-				<li>invert</li>
+			 	<li>invert</li>
 				<li>inherit</li>
 			</ul>
 		</td>
