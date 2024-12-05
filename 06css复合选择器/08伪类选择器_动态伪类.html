@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>伪类选择器_动态伪类</title>
+</head>
+<style>
+	a:link {
+		color: red;
+	}
+	a:visited {
+		color: green;
+	}
+	a:hover {
+		color: blue;
+	}
+	a:active {
+		color: yellow;
+	}
+	/* 动态伪类  注意书写顺序, 顺序很重要*/
+	div:hover {
+		background-color: yellow;
+	}
+	div:active {
+		background-color: blue;
+	}
+
+	input:focus {
+		background-color: pink;
+	}
+	/* 焦点选择器 */
+</style>
+<body>
+	<a href="https://www.google.com" target="_blank">Google</a>
+	<p>注意  link 和 visited 是超链接独有的状态, hover和active可以应用于其他元素</p>
+	<div>test</div>
+	<br>
+	<input type="text">
+	<p>注意 focus 只有表单类元素才能使用</p>
+</body>
+</html>

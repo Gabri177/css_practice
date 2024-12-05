@@ -3,20 +3,24 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>通配选择器</title>
+	<title>ID选择器</title>
 	<style>
 		* {
 			color: red;
 			font-size: 40px;
 		}
+
+		#theme1 {
+			color: blue;
+		}
 		/* 选择所有元素 */
 	</style>
 </head>
 <body>
-	<h1>h1</h1>
-	<h2>h2</h2>
+	<h1 id="theme1">h1</h1>
+	<h2 id="theme2">h2</h2>
 	<h3>h3</h3>
 	<h4>h4</h4>
-	<p>通配选择器一般用于清除样式</p>
+	<p>id不能为数字开头, id不能重复</p>
 </body>
 </html>

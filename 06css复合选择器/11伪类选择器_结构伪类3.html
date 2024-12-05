@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>伪类选择器_结构伪类3</title>
+</head>
+<style>
+	:root {
+
+		background-color: gray;
+	}
+
+	/* :root 等同于直接选中 html 这里写成html 也可以 */
+	span, p {
+		font-size: 30px;
+		height: 5px;
+	}
+
+	div>p:nth-last-child(2) {
+		color: green;
+	}
+
+	div>p:nth-last-of-type(3) {
+		color: red;
+	}
+
+	
+	span:only-of-type{
+		color: skyblue;
+	}
+	/* 选中的是 没有同类型兄弟的元素 */
+
+	span:only-child{
+		color: blue;
+	}
+	/* 选中的是 没有兄弟的元素 */
+
+
+	div:empty {
+		width: 100px;
+		height: 100px;
+		background-color: pink;
+	}
+
+</style>
+<body>
+
+	<div>
+		<span>test1</span>
+	</div>
+	<div>
+		<span>0</span>
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+		<p>5</p>
+		<p>6</p>
+		<p>7</p>
+		<p>8</p>
+		<p>9</p>
+		<p>10</p>
+	</div>
+
+	<div></div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<style>
+	p, span {
+		font-size: 30px;
+	}
+
+	div>p:nth-child(-n + 5) {
+
+		color: green;
+	}
+
+	/* 选中前五个元素,  注意其中的表达式必须是 an + b 的形式  不能写成 b + an 的形式*/
+
+	div>p:first-of-type{
+		color: red;
+	}
+
+</style>
+<body>
+	<div>
+		<span>0</span>
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+		<p>5</p>
+		<p>6</p>
+		<p>7</p>
+		<p>8</p>
+		<p>9</p>
+		<p>10</p>
+	</div>
+</body>
+</html>

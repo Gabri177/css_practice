@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>06属性选择器.html</title>
+</head>
+<style>
+	[title] {
+		color: red;
+	}
+	[my] {
+		color: blue;
+	}
+	[title="t1"] {
+		color: green;
+	}
+
+	[title$="2"] {
+		color: pink;
+	}
+	/* $= 的意思是以什么为结尾 */
+	[title^="g"] {
+		color: yellow;
+	}
+	/* ^= 的意思是以什么为开头 */
+	[title*="3"] {
+		color: skyblue;
+	}
+	/* *= 的意思是包含什么 */
+</style>
+<body>
+	<div title="t1">title1</div>
+	<div my="jaja">title2</div>
+	<div title="t1">title3</div>
+	<div title="g2">title4</div>
+	<div title="t2">title5</div>
+	<div title="t3">title6</div>
+	<div title="t4">title7</div>
+</body>
+</html>

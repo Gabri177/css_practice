@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>伪类选择器_结构伪类1</title>
+</head>
+<style>
+	p, span {
+		font-size: 40px;
+	}
+	div>p:first-child {
+		color: red;
+	}
+	div>p:last-child {
+		color: blue;
+	}
+	div>p:nth-child(2) {
+		color: green;
+	}
+	div>p:nth-child(3) {
+		color: yellow;
+	}
+
+	p:first-child {
+		color: pink;
+	}
+	/* 这段代码的意思是: p是任意元素的第一个子元素 则应用样式 */
+</style>
+<body>
+	<p>
+		注意: 上面代码中的first-child 并不是在div中的所有p元素进行选择 而是检查div中的所有元素, 如果第一个是p元素 则应用样式, 如果不是则不应用样式
+			我们可以看到0并不是红色
+	</p>
+	<div>
+		<marquee>
+			<p>0</p>
+		</marquee>
+		<p>1</p>
+		<p>2</p>
+		<p>3</p>
+		<p>4</p>
+		<p>5</p>
+		<p>6</p>
+	</div>
+</body>
+</html>
