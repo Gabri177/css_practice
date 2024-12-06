@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>选择器优先级_复杂逻辑</title>
+</head>
+<style>
+	
+
+	.content span.test1{
+		color: blue;
+	}
+
+	.test1 {
+		color: chocolate !important; 
+	}
+
+	/* 当加上!important以后 即使是与行内样式起冲突也没用, 以important设置的属性为准 */
+
+	div>p>span:first-child{
+		color: red;
+	}
+
+
+	table ,td {
+		border: solid 1px;
+	}
+
+
+</style>
+<body>
+	<div class="content">
+		<p>
+			<span class="test1">Lorem ipsum dolor sit amet.</span>
+			<span>Lorem ipsum dolor sit amet consectetur.</span>
+		</p>
+	</div>
+
+	<p>当出现复杂的样式的时候, 就需要进行权重的比较</p>
+	<p>权重的格式是 (a,b,c)</p>
+	<table>
+		<thead>权重</thead>
+		<tbody>
+			<tr>
+				<td>a</td>
+				<td>ID选择器的个数</td>
+			</tr>
+			<tr>
+				<td>b</td>
+				<td>类, 伪类, 属性 选择器的个数</td>
+			</tr>
+			<tr>
+				<td>c</td>
+				<td>元素, 伪元素 选择器的个数</td>
+			</tr>
+		</tbody>
+	</table>
+	<p>比较是从左到右依次进行对比的, 当前比较有胜负的结果, 则优先级为胜出的一方</p>
+</body>
+</html>
