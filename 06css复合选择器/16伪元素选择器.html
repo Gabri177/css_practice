@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>伪元素选择器</title>
+</head>
+<style>
+	div::first-letter {
+		color: red;
+		font-size: 50px;
+	}
+
+	div::selection {
+		background-color: skyblue;
+	}
+
+	input::placeholder {
+		color: pink;
+	}
+	
+	p::before {
+		content: "￥";
+	}
+
+	p::after {
+		content: "元";
+	}
+</style>
+<body>
+	<div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam nostrum neque est cumque ex iste delectus maxime eum voluptatibus sint.</div>
+	<br>
+	<input type="text" placeholder="jajajajajaja">
+	<br>
+	<h1>Price</h1>
+	<p>100</p>
+	<p>200</p>
+	<p>300</p>
+</body>
+</html>
